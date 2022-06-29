@@ -1,0 +1,41 @@
+barraNavegacion:
+   path: /barra
+   controller: App\Controller\NavController::navbar
+
+index: 
+   path: /
+   controller: App\Controller\ImagesController::getAllImages
+
+
+todasLasImagenes: #se usa para los path() redirectToRoute()
+   path: /todas
+   controller: App\Controller\ImagesController::getAllImages
+
+agregarImagenes: 
+   path: /agregar
+   controller: App\Controller\ImagesController::addImages
+
+buscarImagenes: 
+   path: /buscarImagenes
+   controller: App\Controller\ImagesController::searchColors
+
+test1: 
+   path: /test1
+   controller: App\Controller\ImagesController::test1
+
+test2: 
+   path: /test2
+   controller: App\Controller\ImagesController::test2
+
+test3: 
+   path: /test3
+   controller: App\Controller\ImagesController::test3
+
+
+
+
+
+
+
+
+

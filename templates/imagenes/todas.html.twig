@@ -1,0 +1,35 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+	<title>todos los usuarios</title>
+{% endblock %}
+
+{% block body %}
+
+  {{ parent() }}
+  {% if lista  %}
+	<div class="container mb-4 text-center ">
+		{% for v in lista %}
+			<div class="container border border-dark m-2 p-2">
+				<div >
+					<img src='{{ asset("uploads/imagenes/" ~ v.url)}}' width="{{v.ancho}}" height="{{v.alto}}" class="p-2">
+				</div>
+				<div>
+					<b>referencia: </b>{{v.texto}}
+					<b>alto: </b>{{v.alto}}
+					<b>ancho: </b>{{v.ancho}}
+					<b>colores: </b>	{{v.colores}}
+				</div>
+			</div>
+		{% endfor %}
+   {% else %}
+   	    <div class="container mb-4 text-center ">
+           <h3>SIN RESULTADOS.</h3>
+		</div>
+   {% endif %}
+
+		{# 	{% if res ?? false %}
+        {% endif %} #}
+	</div>
+
+{% endblock %}

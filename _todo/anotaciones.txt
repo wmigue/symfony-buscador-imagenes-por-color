@@ -1,0 +1,49 @@
+//creando proyecto
+composer create-project symfony/skeleton nombre
+
+
+//doctrine anotations : crea comentarios en los controllers.
+
+//crear un controller
+composer require make
+composer require doctrine/annotations
+make:controller nombre
+
+
+//crear base de datos en mysql
+//en archivo .env modificar ruta de database
+//instalar ORM
+composer require orm
+//importar tablas orm
+php bin/console doctrine:mapping:import "App/Entity" annotation --path=src/Entity
+//generar getters/setters
+php bin/console make:entity --regenerate App
+
+
+//TWIG: motor plantillas
+composer require template
+//comentario: en base.html.twig tenemos todo el codigo que queremeos que se herede automaticamente.
+//archivos de estilos
+composer require symfony/asset
+//bootstrap
+composer require twbs/bootstrap
+//creacion de formularios
+composer require form validator
+php bin/console make:form nombre
+//para subir archivos mime
+composer require symfony/mime
+//para manejar imagenes etc en twig
+composer require asset
+
+
+//para llamar a funciones php desde twig. el comando crea una carpeta en src/twig. se configura el servicio en services.yaml:
+php bin/console make:twig-extension nombrederecurso
+//agregar esto en services.yaml:
+       App\Twig\:
+          resource: '../src/Twig'
+          tags: ['twig.extension']
+//para llamar a la funcion en twig simplemente con: {{miFuncion()}}
+
+
+// ayuda comandos disponibles de make.
+php bin/console list make

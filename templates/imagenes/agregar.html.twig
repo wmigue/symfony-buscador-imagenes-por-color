@@ -1,0 +1,44 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+	<title>agregar imgs</title>
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="container text-center">
+		<div class="d-inline-flex p-3 bg-secondary text-white">
+			{{form_start(form)}}
+			<div class="form-group">
+				{{form_row(form.url)}}
+			</div>
+			<div class="form-group">
+				{{form_row(form.texto)}}
+			</div>
+			<div class="form-group">
+				{{form_row(form.alto)}}
+			</div>
+            <div class="form-group">
+               <button type="button" class="btn btn-warning btn-sm m-2 addColor">agregar color</button>
+			</div>
+            <div class="form-group colors">
+              {{form_row(form.colores)}}
+			</div>
+			<div class="form-group p-2">
+				{{form_widget(form.submit)}}
+			{{form_end(form)}}
+		</div>
+	</div>
+
+
+	{% block javascripts %}
+		<script src="{{ asset('assets/js/javascript1.js') }}" type="text/javascript"></script>
+        <script>
+           funcion1();
+		   funcion2();
+        </script>
+
+	{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+1-Lets the user upload a picture (to a server). PNG and JPG are the only formats allowed.
+2-Lets the user give a name to the picture.
+3-Lets the user specify a height in the UI, the width should be automatically computed from the aspect ratio.
+4-Lets the user specify one or more colors that are present on that picture from a color picker.
+5-The user can repeat this process N times with new pictures.
+6-Lets the user search for pictures in the dataset by specifying a color and a max distance (read below for a definition).
+The search results should be all pictures with all their metadata (including other colors) that have at least one color within the specified
+ distance of the provided color (ie. if the color is Pure Red #FF0000 and distance is 1, then a picture with colors of #FF0100 or #FE0000 or #FF0001 
+should all match while #FF0005 shouldn't as it's distance would be 5).
+
+Color Distance 
+We'll define the color distance as the sRGB distance, meaning the square root of the sum of the difference between the Red, Green and Blue values for
+ each color squared. This means that the distance between #112233 and #445566 is (in JavaScript, for example) Math.sqrt((0x11 - 0x44)*2 + (0x22 - 0x55)2 + (0x33 - 0x66)*2).
+
+You can't:
+Use services hosted outside your project.
+
+You can:
+Use a CSS and/or JavaScript library or framework to style and design the UI.
+Use a Backend Framework.
+Use SSR or CSR.
+Use SQLite as your database server if you prefer.
+Use CDNs to include third party packages (we would appreciate not having to download or install dependencies to run your code).
+
+You don't have to:
+Take into account alpha (transparency) values, assume all colors will be fully opaque (alpha = 1).
+Implement authentication or user sessions. Anybody can upload and all searches all global across the dataset.
+Build the best solution possible, it's okay if your implementation will not be the most performant once there are N pictures in the dataset 
+(with N being a large number).
+
+*********************************************ffff00
+
+
+
+1-Permite que el usuario suba una imagen (a un servidor). PNG y JPG son los únicos formatos permitidos.
+2-Permite al usuario dar un nombre a la imagen.
+3-Permite al usuario especificar una altura en la interfaz de usuario, el ancho debe calcularse automáticamente a partir de la relación de aspecto.
+4-Permite al usuario especificar uno o más colores que están presentes en esa imagen desde un selector de color.
+5-El usuario puede repetir este proceso N veces con nuevas imágenes.
+6-Permite al usuario buscar imágenes en el conjunto de datos especificando un color y una distancia máxima (lea a continuación para obtener una definición).
+Los resultados de la búsqueda deben ser todas las imágenes con todos sus metadatos (incluidos otros colores) que tengan al menos un color dentro del especificado.
+ distancia del color proporcionado (es decir, si el color es Pure Red #FF0000 y la distancia es 1, entonces una imagen con colores de #FF0100 o #FE0000 o #FF0001
+todos deberían coincidir, mientras que #FF0005 no debería, ya que su distancia sería 5).
+
+Distancia de color
+Definiremos la distancia de color como la distancia sRGB, es decir, la raíz cuadrada de la suma de la diferencia entre los valores rojo, verde y azul para
+ cada color al cuadrado. Esto significa que la distancia entre #112233 y #445566 es (en JavaScript, por ejemplo) Math.sqrt((0x11 - 0x44)*2 + (0x22 - 0x55)2 + (0x33 - 0x66)*2).
+
+no puedes:
+Utilice servicios alojados fuera de su proyecto.
+
+Puedes:
+Use una biblioteca o marco CSS y/o JavaScript para aplicar estilo y diseñar la interfaz de usuario.
+Utilice un marco de back-end.
+Utilice SSR o CSR.
+Use SQLite como su servidor de base de datos si lo prefiere.
+Usa CDN para incluir paquetes de terceros (agradeceríamos no tener que descargar o instalar dependencias para ejecutar tu código).
+
+No tienes que:
+Tenga en cuenta los valores alfa (transparencia), asuma que todos los colores serán completamente opacos (alfa = 1).
+Implementar autenticación o sesiones de usuario. Cualquiera puede cargar y todas las búsquedas globales en todo el conjunto de datos.
+Cree la mejor solución posible, está bien si su implementación no será la más eficaz una vez que haya N imágenes en el conjunto de datos
+(siendo N un número grande).
