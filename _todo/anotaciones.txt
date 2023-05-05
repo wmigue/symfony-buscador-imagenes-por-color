@@ -1,3 +1,15 @@
+
+//instalar composer primer paso.
+//instalando symfony scoop (son estos 3 comandos)
+wget https://get.symfony.com/cli/installer -O - | bash
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+scoop install symfony-cli
+
+//levantar servidor
+symfony server:start
+
+
+
 //creando proyecto
 composer create-project symfony/skeleton nombre
 
@@ -10,6 +22,8 @@ composer require doctrine/annotations
 make:controller nombre
 
 
+
+
 //crear base de datos en mysql
 //en archivo .env modificar ruta de database
 //instalar ORM
@@ -18,6 +32,10 @@ composer require orm
 php bin/console doctrine:mapping:import "App/Entity" annotation --path=src/Entity
 //generar getters/setters
 php bin/console make:entity --regenerate App
+//migraciones de datos hacia la base.
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
 
 
 //TWIG: motor plantillas
